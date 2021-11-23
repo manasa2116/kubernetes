@@ -11,5 +11,5 @@ spec:
       port: 80
   selector:
     name: result-app
-      author: manasa
+    author: manasa
 ...
