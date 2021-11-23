@@ -10,5 +10,5 @@ spec:
       port: 80
   selector:
     name: voting-app
-      author: manasa
+    author: manasa
 ...
