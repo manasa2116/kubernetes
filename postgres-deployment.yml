@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+   name: postgres
+   author: manasa
+spec:
+  replicas:1
+  selector:
+    matchLabels:
+      name: postgres
+      author: manasa
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        name: postgres
+        author: manasa
+    spec:
+      containers:
+        - name: postgres
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: ongole
+            - name: POSTGRES_USER
+              value: myuser
+            - name: POSTGRES_DB
+              value: mydb
+          ports:
+            - containerPort: 80
+...

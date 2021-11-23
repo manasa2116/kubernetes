@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  labels:
+    name: redis
+    author: manasa
+spec:
+  replicas:1
+  selector:
+    matchLabels:
+      name: redis
+      author: manasa
+  template:
+    metadata:
+      labels:
+        name: redis
+        author: manasa
+    spec:
+      containers:
+        - name: redis-pod
+          image: redis
+          ports:
+            - containerPort: 6380
+...
